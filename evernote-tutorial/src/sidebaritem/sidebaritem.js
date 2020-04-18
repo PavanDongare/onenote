@@ -7,7 +7,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { removeHTMLTags } from '../helpers';
 
 
-class SidebaritemComponent extends React.Component {
+class SidebarItemComponent extends React.Component {
         constructor(){
                 super();
         }
@@ -17,4 +17,4 @@ class SidebaritemComponent extends React.Component {
 }
 
 // can access classes through this.props.classes.className
-export default withStyles(styles)(SidebaritemComponent);
+export default withStyles(styles)(SidebarItemComponent);
