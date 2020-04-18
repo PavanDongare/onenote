@@ -6,12 +6,25 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 
 class EditorComponent extends React.Component {
-        constructor(){
-                super();
-        }
-        render(){
-                return (<div>Hello Editor</div>)
-        }
+  constructor(){
+        super();
+        this.state ={ 
+           text: '',
+           title: '',
+           id: ''
+        };    
+  }
+
+  render() {
+          const { classes } = this.props;
+
+          return (
+              <div classes = { classes.editorContainer } >
+                      <ReactQuill></ReactQuill>
+              </div>
+          );
+  }
 }
+
 
 export default withStyles(styles)(EditorComponent);
