@@ -40,7 +40,7 @@ class SidebarComponent extends React.Component {
                       </div> 
                       : null 
                     }
-                    <list>
+                    <List>
                       { 
                        notes.map((_note,_index)=>{
                            return (
@@ -56,7 +56,7 @@ class SidebarComponent extends React.Component {
                            )
                        })
                       }
-                    </list>
+                    </List>
                 </div>
               );
         } else{ return (<div></div>)};
