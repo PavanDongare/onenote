@@ -22,17 +22,29 @@ class App extends React.Component {
   }
 
 
-
+  // app shuld pass delect select & new note as prop to sidebarcomponent
   render(){
     return(
         <div className="app-container">  
             <SidebarComponent
               selectedNoteIndex={this.state.selectedNoteIndex}
               notes={this.state.notes}
+              deleteNote= {this.deleteNote}
+              selectNote = {this.selectNote}
+              newNote = {this.newNote}
               >
 
             </SidebarComponent>
-            <EditorComponent></EditorComponent>
+            {
+                this.state.selectedNote 
+                ?
+                <EditorComponent selectedNote={this.state.selectedNote}
+                selectedNoteIndex = {this.state.selectedNoteIndex}
+                notes = { this.state.notes} ></EditorComponent>
+                :
+                null
+            }
+           
         </div> 
     );
   }
@@ -50,10 +62,20 @@ class App extends React.Component {
         console.log(notes);
         this.setState({notes:notes}); // this will re render sidebar 
       });
-
   }
 
+  selectNote = (n,i)=> this.setState({
+      selectedNoteIndex:i,
+      selectedNote:n
+  })
 
+  deleteNote = ()=> {
+
+  }
+   
+  newNote = ()=> {
+
+  }
 }
 
 export default App;

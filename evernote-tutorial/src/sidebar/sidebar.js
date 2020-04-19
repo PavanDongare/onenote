@@ -59,7 +59,7 @@ class SidebarComponent extends React.Component {
                     </List>
                 </div>
               );
-        } else{ return (<div></div>)};
+        } else{ return (<div></div>) };
     }
 
     newNoteBtnClick = () => {
@@ -71,12 +71,13 @@ class SidebarComponent extends React.Component {
     }
 
     newNote=()=> {
-        console.log('submited');
+        console.log('submited'); 
     }
+ 
+    selectNote=(n,i)=>{ 
+            this.props.selectNote(n,i);
+    } 
 
-    selectNote= ()=>{
-        console.log('select note');
-    }
     deleteNote= ()=>{
         console.log('delete note');
     }

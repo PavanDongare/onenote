@@ -26,17 +26,24 @@ class SidebarItemComponent extends React.Component {
                             <ListItemText
                                 primary= {_note.title}>
                             </ListItemText>
-                            <DeleteIcon 
+                        
+                    </div>
+                    <DeleteIcon 
                                 onClick = {()=> this.deleteNote(_note) }
                                 className= { classes.deleteIcon }
-                            >  </DeleteIcon>
-                    </div>
+                    >  </DeleteIcon>
                 </ListItem>
              </div>)
         } 
 
-        deleteNote = ()=> {}
-        selectNote = ()=> {}
+
+        selectNote = (n,i) =>  this.props.selectNote(n,i);
+
+        deleteNote = (n) => {
+            if(window.confirm(`Is "#${n.title}#" your own note , are you sure you want to delete?`)){
+                this.props.deleteNote(n);
+            }
+        }; 
 }
 
 
