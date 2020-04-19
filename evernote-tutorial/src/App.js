@@ -48,7 +48,7 @@ class App extends React.Component {
           return data;
         });
         console.log(notes);
-        this.setState({notes:notes});
+        this.setState({notes:notes}); // this will re render sidebar 
       });
 
   }

@@ -16,45 +16,48 @@ class SidebarComponent extends React.Component {
     }
     render(){
         const { notes, classes, selectedNoteIndex } = this.props;
-        return (
-          <div className={classes.sidebarContainer}>
-              <Button
-                  onClick={this.newNoteBtnClick}
-                  className={classes.newNoteBtn}
-              >
-                  {this.state.addingNote ? 'Cancel' : 'New Note'} </Button>
-              { // this is js sc
-                this.state.addingNote ? 
-                <div>
-                    <input  
-                        type ='text'
-                        className={classes.newNoteInput}
-                        placeholder="Enter Note Title"
-                        onKeyUp={ (e)=> this.updateTitle(e.target.value) } ></input>
-
+        if(notes)
+        {
+            return (
+                <div className={classes.sidebarContainer}>
                     <Button
-                        className={classes.newNoteSubmitBtn}
-                        onClick={this.newNote}> Submit Note </Button>
-                </div> 
-                : null 
-              }
-              <list>
-                { 
-                 notes.map((_note,_index)=>{
-                     return (
-                      <div key={_index}>
-                        <SidebarItemComponent
-                           _note={_note}
-                           _index={_index}
-                           selectedNoteIndex={selectedNoteIndex}
-                           selectNote={this.selectNote} > </SidebarItemComponent>
-                      </div>   
-                     )
-                 })
-                }
-              </list>
-          </div>
-        );
+                        onClick={this.newNoteBtnClick}
+                        className={classes.newNoteBtn}
+                    >
+                        {this.state.addingNote ? 'Cancel' : 'New Note'} </Button>
+                    { // this is js sc
+                      this.state.addingNote ? 
+                      <div>
+                          <input  
+                              type ='text'
+                              className={classes.newNoteInput}
+                              placeholder="Enter Note Title"
+                              onKeyUp={ (e)=> this.updateTitle(e.target.value) } ></input>
+      
+                          <Button
+                              className={classes.newNoteSubmitBtn}
+                              onClick={this.newNote}> Submit Note </Button>
+                      </div> 
+                      : null 
+                    }
+                    <list>
+                      { 
+                       notes.map((_note,_index)=>{
+                           return (
+                            <div key={_index}>
+                              <SidebarItemComponent
+                                 _note={_note}
+                                 _index={_index}
+                                 selectedNoteIndex={selectedNoteIndex}
+                                 selectNote={this.selectNote} > </SidebarItemComponent>
+                            </div>   
+                           )
+                       })
+                      }
+                    </list>
+                </div>
+              );
+        } else{ return (<div></div>)};
     }
 
     newNoteBtnClick = () => {
