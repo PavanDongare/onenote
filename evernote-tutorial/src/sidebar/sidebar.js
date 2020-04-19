@@ -49,7 +49,9 @@ class SidebarComponent extends React.Component {
                                  _note={_note}
                                  _index={_index}
                                  selectedNoteIndex={selectedNoteIndex}
-                                 selectNote={this.selectNote} > </SidebarItemComponent>
+                                 selectNote={this.selectNote}
+                                 deleteNote={this.deleteNote} > </SidebarItemComponent>
+                              <Divider></Divider>
                             </div>   
                            )
                        })
@@ -74,6 +76,9 @@ class SidebarComponent extends React.Component {
 
     selectNote= ()=>{
         console.log('select note');
+    }
+    deleteNote= ()=>{
+        console.log('delete note');
     }
 }
 
