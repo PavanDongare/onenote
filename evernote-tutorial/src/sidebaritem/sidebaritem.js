@@ -19,10 +19,10 @@ class SidebarItemComponent extends React.Component {
                 <ListItem
                  className = {classes.listItem } 
                  selected = { selectedNoteIndex === _index }
-                 alignItems= 'flex-start' >
-                     <div 
-                        className={classes.textSelection} 
-                        onClick={ ()=>this.selectNote(_note,_index) } >
+                 alignItems= 'flex-start'
+                 onClick={ ()=>this.selectNote(_note,_index) } >
+                     <div className={classes.textSelection} 
+                         >
                             <ListItemText
                                 primary= {_note.title}>
                             </ListItemText>
