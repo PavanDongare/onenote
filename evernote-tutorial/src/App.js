@@ -36,13 +36,15 @@ class App extends React.Component {
 
             </SidebarComponent>
             {
-                this.state.selectedNote 
-                ?
+                this.state.selectedNote ?
                 <EditorComponent selectedNote={this.state.selectedNote}
                 selectedNoteIndex = {this.state.selectedNoteIndex}
-                notes = { this.state.notes} ></EditorComponent>
-                :
-                null
+                notes = { this.state.notes}
+                noteUpdate = { this.noteUpdate}
+                >
+
+                </EditorComponent>
+                : null
             }
            
         </div> 
@@ -75,6 +77,10 @@ class App extends React.Component {
    
   newNote = ()=> {
 
+  }
+
+  noteUpdate = ()=> {
+      console.log('update call from top prop')
   }
 }
 
