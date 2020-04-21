@@ -80,7 +80,16 @@ class App extends React.Component {
   }
 
   noteUpdate = (id,note)=> {
-      console.log(id,note)
+      console.log(id,note);
+      firebase
+      .firestore()
+      .collection('notes')
+      .doc(id)
+      .update({
+          title: note.title,
+          body : note.body,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      })
   }
 }
 
