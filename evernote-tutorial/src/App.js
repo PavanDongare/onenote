@@ -79,8 +79,8 @@ class App extends React.Component {
 
   }
 
-  noteUpdate = ()=> {
-      console.log('update call from top prop')
+  noteUpdate = (id,note)=> {
+      console.log(id,note)
   }
 }
 

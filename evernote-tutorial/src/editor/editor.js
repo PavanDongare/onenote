@@ -52,7 +52,7 @@ class EditorComponent extends React.Component {
           ()=>{
                  this.props.noteUpdate(this.state.id, {
                      title: this.state.title,
-                     body: this.state.body
+                     body: this.state.text
                  })
         },2000);
 
