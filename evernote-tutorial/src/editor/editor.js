@@ -33,14 +33,31 @@ class EditorComponent extends React.Component {
           const { classes } = this.props;
 
           return (
-              <div classes = { classes.editorContainer } >
-                      <ReactQuill value={this.state.text}
-                                  onChange={this.updateBody}
+            <div>
+                     <BorderColorIcon 
+                     className={classes.editIcon} > </BorderColorIcon>
+                     <input
+                      className = {classes.titleInput}
+                      placeholder  ='Note Title...'
+                      value={this.state.title?this.state.title:''}
+                      onChange= { (e)=> this.updateTitle(e.target.value) }
                       >
-                           
-                      </ReactQuill>
-              </div>
+                     </input>
+                     <div classes = { classes.editorContainer } >
+                             <ReactQuill value={this.state.text}
+                                         onChange={this.updateBody}
+                             >
+                                  
+                             </ReactQuill>
+                     </div>
+            </div>
           );
+
+  }
+
+  updateTitle = async (val) => {
+        await this.setState({title:val});
+        this.update();
   }
 
   updateBody = async (val) => {
