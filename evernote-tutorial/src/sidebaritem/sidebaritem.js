@@ -29,7 +29,7 @@ class SidebarItemComponent extends React.Component {
                         
                     </div>
                     {
-                        !_note.title.includes('pavan') ?
+                        ! ((_note.title) && _note.title.includes('pavan')) ?
                         <DeleteIcon 
                         onClick = {()=> this.deleteNote(_note) }
                         className= { classes.deleteIcon }
