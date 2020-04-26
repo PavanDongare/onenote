@@ -37,3 +37,9 @@ html, body {
   top: 50px;
   left: calc(50% - 165px);
 }
+
+.ql-editor {
+    cursor: text;
+    height: 85vh;
+    width: 80vh;
+}
