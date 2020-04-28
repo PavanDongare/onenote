@@ -31,6 +31,7 @@ html, body {
 .MuiListItem-root.Mui-selected {
   background-color: #d4d8e8 !important;
 }
+
 .no-note-selected {
   font-size: 48px;
   position: absolute;
@@ -41,7 +42,6 @@ html, body {
 .ql-editor {
     cursor: text;
     height: 85vh;
-    width: 80vh;
 }
 
 .SidebarComponent-sidebarContainer-5 {
