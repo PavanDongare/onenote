@@ -4,6 +4,8 @@ import debounce from '../helpers';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 
 class EditorComponent extends React.Component {
   constructor(){
@@ -43,6 +45,14 @@ class EditorComponent extends React.Component {
                       onChange= { (e)=> this.updateTitle(e.target.value) }
                       >
                      </input>
+                     <DeleteIcon className={classes.deleteIcon}
+                        onClick = {()=> this.deleteNote(this.state.title?this.state.title:'') }
+                    
+                        >  </DeleteIcon>
+                    <div>
+                       
+                    </div>
+                     
                      <div classes = { classes.editorContainer } >
                              <ReactQuill value={this.state.text}
                                          onChange={this.updateBody}

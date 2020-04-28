@@ -27,6 +27,14 @@ const styles = theme => ({
           width: '10',
           height: '10'
         },
+        deleteIcon: {
+            position: 'absolute',
+            right: '100px',
+            top: '12px',
+            color: 'white',
+            width: '10',
+            height: '10'
+          },
         editorContainer: {
           height: '100%',
           boxSizing: 'border-box'
