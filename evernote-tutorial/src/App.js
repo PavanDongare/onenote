@@ -41,6 +41,7 @@ class App extends React.Component {
                 selectedNoteIndex = {this.state.selectedNoteIndex}
                 notes = { this.state.notes}
                 noteUpdate = { this.noteUpdate}
+                deleteNote = { this.deleteNote}
                 >
 
                 </EditorComponent>
@@ -84,7 +85,6 @@ class App extends React.Component {
         :
         this.setState({selectedNoteIndex:null, selectNote:null})
     }
-
     firebase
     .firestore()
     .collection('notes')

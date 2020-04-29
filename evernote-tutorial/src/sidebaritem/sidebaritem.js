@@ -28,7 +28,8 @@ class SidebarItemComponent extends React.Component {
                             </ListItemText>
                         
                     </div>
-                    {
+
+                    {/* {
                         ! ((_note.title) && _note.title.includes('pavan')) ?
                         <DeleteIcon 
                         onClick = {()=> this.deleteNote(_note) }
@@ -36,7 +37,7 @@ class SidebarItemComponent extends React.Component {
                         >  </DeleteIcon>
                         :
                         null
-                    }
+                    } */}
                    
                 </ListItem>
              </div>)
@@ -46,6 +47,7 @@ class SidebarItemComponent extends React.Component {
         selectNote = (n,i) =>  this.props.selectNote(n,i);
 
         deleteNote = (n) => {
+            console.log(n);
             if(window.confirm(`Is "#${n.title}#" your own note , are you sure you want to delete?`)){
                 this.props.deleteNote(n);
             }

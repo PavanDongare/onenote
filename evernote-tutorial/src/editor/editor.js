@@ -33,11 +33,12 @@ class EditorComponent extends React.Component {
 
   render() {
           const { classes } = this.props;
-
           return (
             <div>
                      <BorderColorIcon 
-                     className={classes.editIcon} > </BorderColorIcon>
+                     className={classes.editIcon} 
+                    
+                     > </BorderColorIcon>
                      <input
                       className = {classes.titleInput}
                       placeholder  ='Note Title...'
@@ -46,12 +47,8 @@ class EditorComponent extends React.Component {
                       >
                      </input>
                      <DeleteIcon className={classes.deleteIcon}
-                        onClick = {()=> this.deleteNote(this.state.title?this.state.title:'') }
-                    
+                         onClick = {()=> this.deleteNote(this.props.selectedNote) }
                         >  </DeleteIcon>
-                    <div>
-                       
-                    </div>
                      
                      <div classes = { classes.editorContainer } >
                              <ReactQuill value={this.state.text}
@@ -83,7 +80,13 @@ class EditorComponent extends React.Component {
                  })
         },2000);
 
-}
+  deleteNote(note){
+    if(window.confirm(`Is "#${note.title}#" your own note , are you sure you want to delete?`)){
+        this.props.deleteNote(note);
+    }
+  }
+
+} // component close bracket
 
 
 export default withStyles(styles)(EditorComponent);
