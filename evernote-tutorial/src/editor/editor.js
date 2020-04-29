@@ -15,6 +15,29 @@ class EditorComponent extends React.Component {
            title: '',
            id: ''
         };    
+
+        this.modules = {
+            toolbar: [
+              [{ 'font': [] }],
+              [{ 'size': ['small', false, 'large', 'huge'] }],
+              ['bold', 'italic', 'underline'],
+              [{'list': 'ordered'}, {'list': 'bullet'}],
+              [{ 'align': [] }],
+              [{ 'color': [] }, { 'background': [] }],
+              ['clean']
+            ],
+
+            clipboard : { matchVisual: false }
+        };
+    
+        this.formats = [
+            'font',
+            'size',
+            'bold', 'italic', 'underline',
+            'list', 'bullet',
+            'align',
+            'color', 'background'
+          ];
   }
 
   setValues=()=>{
@@ -53,8 +76,8 @@ class EditorComponent extends React.Component {
                      <div classes = { classes.editorContainer } >
                              <ReactQuill value={this.state.text}
                                          onChange={this.updateBody}
+                                         modules = {this.modules}
                              >
-                                  
                              </ReactQuill>
                      </div>
             </div>
